@@ -10,10 +10,18 @@
       })();
     </script>
     <style>
-      html[data-theme="light"] body { background: #ebeae6; color: #141414; }
       html[data-theme="light"] #root p { color: #525254; }
-      html[data-theme="dark"] body, body { background: #0f0f1a; color: #e8e8f0; }
       html[data-theme="dark"] #root p, #root p { color: #8888a0; }
+      /* Body background only on desktop so mobile safe areas can stay transparent */
+      @media (min-width: 768px) {
+        html[data-theme="light"] body { background: #ebeae6; color: #141414; }
+        html[data-theme="dark"] body, body { background: #0f0f1a; color: #e8e8f0; }
+      }
+      @media (max-width: 767px) {
+        html[data-theme="light"] body, html[data-theme="dark"] body, body { background: transparent; }
+        html[data-theme="light"] body { color: #141414; }
+        html[data-theme="dark"] body, body { color: #e8e8f0; }
+      }
     </style>
     <link rel="icon" type="image/svg+xml" href="./icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5, user-scalable=yes" />
@@ -24,8 +32,8 @@
     <meta name="apple-mobile-web-app-title" content="ArtSky" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>ArtSky</title>
-    <script type="module" crossorigin src="/artsky-dev/assets/index-CzDR5kOR.js"></script>
-    <link rel="stylesheet" crossorigin href="/artsky-dev/assets/index-DJ8-aEc0.css">
+    <script type="module" crossorigin src="/artsky-dev/assets/index-B1qoeNU5.js"></script>
+    <link rel="stylesheet" crossorigin href="/artsky-dev/assets/index-DjEveVpl.css">
   <link rel="manifest" href="/artsky-dev/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/artsky-dev/registerSW.js"></script></head>
   <body style="margin:0;min-height:100vh;min-height:100dvh">
     <div id="root"><p style="margin:0;padding:2rem;text-align:center">Loading…</p></div>
